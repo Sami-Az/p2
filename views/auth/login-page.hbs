@@ -1,15 +1,19 @@
-
 <div class="log-in">
-    <form action="/auth/login" method="POST" id="form-container">
+        <h2>Login page</h2>
+        <br>
+<div class="log-in">
+    <form action="/process-login" method="POST" id="form-container">
       <label>
         Username:
-      <input id="username" type="text" name="username" placeholder="e.g exemple@gmail.com">
+      <input id="username" type="text" name="email" placeholder="e.g exemple@gmail.com">
       </label>
       <br><br>
 
       <label>
-        Password:</label>
-      <input id="password" type="password" name="password" placeholder="Your password">
+        Password:
+        <input id="password" type="password" name="password" placeholder="*****">
+      </label>
+      
       {{#if message }}
       
       <br>
@@ -19,7 +23,7 @@
       <br><br>
 
       <button class="button is-primary">Login</button>
-
+      <br><br>
       <p class="account-message">
         Don't have an account yet?
         <a href="/auth/login">Signup</a>

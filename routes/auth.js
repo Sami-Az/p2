@@ -5,59 +5,77 @@ const User = require("../models/User");
 const Seller = require("../models/Seller");
 const Product = require("../models/Product");
 
+
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
 
-authRoutes.get("/login", (req, res, next) => {
-  res.render("auth/login", { "message": req.flash("error") });
-});
-
-authRoutes.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
-  failureRedirect: "/auth/login",
-  failureFlash: true,
-  passReqToCallback: true
-}));
-
+// Sign-up 
 authRoutes.get("/signup", (req, res, next) => {
-  res.render("auth/signup");
+  res.render("auth/signup-page");
 });
 
-authRoutes.post("/signup", (req, res, next) => {
-  const username = req.body.username;
-  const password = req.body.password;
-  const rol = req.body.role;
-  if (username === "" || password === "") {
-    res.render("auth/signup", { message: "Indicate username and password" });
+authRoutes.post("/process-signup", (req, res, next) => {
+  const {fullname, email, sellerStatus, password} = req.body;
+  console.log(req.body);
+  if (email === "" || password === "") {
+    res.render("auth/signup-page", { message: "Indicate email and password" });
     return;
   }
 
-  User.findOne({ username }, "username", (err, user) => {
+  User.findOne({ email }, "email", (err, user) => {
     if (user !== null) {
-      res.render("auth/signup", { message: "The username already exists" });
+      res.render("auth/signup-page", { message: "The email already exists" });
       return;
     }
 
     const salt = bcrypt.genSaltSync(bcryptSalt);
     const hashPass = bcrypt.hashSync(password, salt);
-l
-    const newUser = new User({
-      username,
-      password: hashPass,
-    });
-
-    newUser.save((err) => {
-      if (err) {
-        res.render("auth/signup", { message: "Something went wrong" });
-      } else {
-        res.redirect("/");
-      }
-    });
+    ;
+    
+   User.create({fullname, email, sellerStatus, encryptedPassword: hashPass })
+   .then(() => {
+      res.redirect("/");
+   })
+   .catch ((err) => {
+     next (err);
+   });
   });
 });
 
+// Log-in
+authRoutes.get("/login", (req, res, next) => {
+  res.render("auth/login-page", { "message": req.flash("error") });
+});
+
+authRoutes.post("/process-login",(req, res, next) => {
+  const {email, password} =req.body;
+  User.findOne({email})
+  .then ((userDetails) => {
+    if(!userDetails) {
+      res.redirect ("auth/login-page");
+      return;
+    }
+
+    const {encryptedPassword} = userDetails;
+    console.log(userDetails);
+    if(!bcrypt.compareSync(password, encryptedPassword)) {
+
+       res.redirect("auth/login-page");
+       return;
+    }
+    req.login(userDetails, () => {
+        res.redirect("/");
+    })
+  })
+  .catch ((err) => {
+    next(err);
+  })
+});
+
+
+// Log-out
 authRoutes.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/");

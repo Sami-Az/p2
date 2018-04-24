@@ -4,7 +4,8 @@ const Schema   = mongoose.Schema;
 const userSchema = new Schema({
   fullname:     { type: String, required: true},
   email:        { type: String, required: true},
-  sellerStatus: { type: Boolean, default: false}
+  sellerStatus: { type: Boolean, default: false},
+  encryptedPassword: { type: String, required: true }
 }, {
   timestamps: {
     createdAt: 'created_at',
