@@ -9,10 +9,18 @@
   <header>
     <nav>
       <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a> 
+
+    {{#if blahUser}}
+      <strong id="user-email">{{blahUser.email}}</strong>
+      <a href="/logout" id="logout">Logout</a>
+
+    {{else}}
       <a href="/login">Login</a>
       <a href="/signup">Signup</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
+    {{/if}}
+    
     </nav>
   </header>
   
