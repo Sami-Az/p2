@@ -3,8 +3,18 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
+header {
+  background: #ceb699;
+  height: 60px; }
+
 h2 {
-  margin-top: 30px; }
+  margin-top: 30px;
+  font-weight: bold; }
+
+nav {
+  font-size: 15px;
+  padding-left: 20px;
+  padding-top: 20px; }
 
 a {
   color: tomato;
@@ -12,36 +22,46 @@ a {
   padding-left: 20px; }
 
 .sign-up {
+  font-size: 17px;
   padding: 40px 40px; }
 
 .log-in {
+  font-size: 17px;
   padding: 40px 40px; }
 
 .about-page {
+  font-size: 17px;
   padding: 20px 20px; }
 
 .contact-page {
+  font-size: 17px;
   padding: 40px 40px; }
 
 .columns {
   margin-top: 30px;
-  border: 2px solid tomato;
-  height: 500px;
+  border: 1px solid tomato;
+  height: 550px;
   width: 100%;
   margin-left: 0px; }
 
 .department {
-  background: slategray;
+  font-size: 18px;
+  background: #ceb699;
   color: tomato;
   padding-left: 30px; }
 
 .sellers {
+  font-size: 18px;
   background: gray;
   color: tomato;
   padding-left: 30px; }
 
 .is-half {
-  background: gainsboro;
-  padding-left: 70px; }
+  background-image: url("https://wikiki.github.io/images/merry-christmas.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: tomato;
+  font-size: 18px;
+  padding-left: 90px; }
 
 /*# sourceMappingURL=style.css.map */
