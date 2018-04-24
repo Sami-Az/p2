@@ -1,10 +1,72 @@
 body {
+  width: 100%;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+h2 {
+  margin-top: 30px;
+}
+
+
 a {
-  color: #00B7FF;
+  // color: #00B7FF;
+  color: tomato;
   text-decoration: none;
   padding-left: 20px;
 }
+
+.sign-up {
+  padding: 40px 40px;
+}
+
+.log-in {
+  padding: 40px 40px;
+}
+
+.about-page {
+  padding: 20px 20px;
+}
+
+.contact-page {
+  padding: 40px 40px;
+}
+
+.columns {
+  margin-top: 30px;
+  border: 2px solid tomato;
+  height: 500px;
+  width: 100%;
+  margin-left: 0px;
+}
+
+.department {
+  background: slategray;
+  color: tomato;
+  padding-left: 30px;
+}
+
+.sellers {
+  background: gray;
+  color: tomato;
+  padding-left: 30px;
+}
+
+.is-half {
+  background: gainsboro;
+  padding-left: 70px;
+}
+
+// footer {
+//   margin-top: 70%;
+//   background: slategray;
+//   border: 2px solid tomato;
+//   padding-top: 30px;
+//   height: 80px;
+//   width: 100%;
+// }
+
+// footer a {
+//   float: right;
+//   padding-right: 25px;
+// }
