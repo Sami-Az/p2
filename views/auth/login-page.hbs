@@ -1,18 +1,27 @@
 <h2>Log in page </h2>
 
+<form action="/auth/login" method="POST" id="form-container">
+  <label>
+    Username:
+  <input id="username" type="text" name="username" placeholder="e.g exemple@gmail.com">
+  </label>
+  <br><br>
 
-<form action="/process-login" method="POST">
-<label>
-  Username: 
-  <input type="text" name="" placeholder="e.g exemple@gmail.com">
-</label>
-<br>
-<br>
-<label>
-  Password: 
-   <input type="password" name="" placeholder="*******">
-</label>
-<br>
-<br>
-<button>Log in</button>
+  <label>
+    Password:</label>
+  <input id="password" type="password" name="password" placeholder="Your password">
+  {{#if message }}
+  
+  <br>
+    <div class="error-message">{{ message }}</div>
+  {{/if}}
+
+  <br><br>
+
+  <button>Login</button>
+
+  <p class="account-message">
+    Don't have an account yet?
+    <a href="/auth/login">Signup</a>
+  </p>
 </form>
