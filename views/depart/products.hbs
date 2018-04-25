@@ -1,0 +1,68 @@
+<div class="all-products">
+   <h2> All products </h2>
+   <br>
+   <h3>List of all the products</h3>
+   <br>
+</div>
+
+
+<ul>
+  {{#each productList}}
+
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="{{this.imageUrl}}" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">{{this.productName}}</p>
+        <p class="subtitle is-6">Brand: {{this.brand}}</p>
+      </div>
+    </div>
+
+    <div class="content">
+      {{this.description}}
+      <br>
+      
+    </div>
+  </div>
+
+<a href="products/{{this._id}}/edit">Edit</a>
+<a href="products/{{this._id}}/delete">Delete</a>
+<br>
+<br>
+</div>
+
+  {{/each}}
+</ul>
+
+
+
+
+
+
+{{!-- <div class="columns" id="products">
+     
+     <div class="column is-two-fifths" id="two-fifth"></div>
+     <br>
+     <div class="column is-one-third" id="first-fifth"></div>
+     <br>
+     <div class="column is-one-third" id="sec-fifth"></div>
+     <br>
+</div>
+
+<div class="columns" id="products-button">
+   <div class="column is-two-fifths">
+     
+    <a href="/products/{{product._id}}">See Details</a>
+   </div>
+   <div class="column is-one-third">
+     <a href="/products/{{product._id}}">See Details</a>
+   </div>
+   <div class="column is-one-third">
+      <a href="/products/{{product._id}}">See Details</a>
+   </div>
+</div> --}}

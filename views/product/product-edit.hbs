@@ -1,0 +1,55 @@
+<div class="product-edit">
+   <h2>Edit a product</h2>
+<br>
+<br>
+<form action="/process-edit/{{productId}}" method="POST">
+<label>
+  Name: 
+  <input type="text" name="productName" value= "{{product.productName}}" placeholder="Title...">
+</label>
+  <br>
+  <br>
+<label>
+  Brand: 
+  <input type="text" name="brand" value= "{{product.brand}}" placeholder="Author...">
+</label>
+  <br>
+  <br>
+<label>
+  Model: 
+  <input type="text" name="model" value= "{{product.model}}" placeholder="model...">
+</label>
+  <br>
+  <br>
+<label>
+  Description: 
+  <input type="text" name="description" value= "{{product.description}}" placeholder="Description...">
+</label>
+  <br>
+  <br>
+<label>
+  Status: 
+  <select name="status" class="button">
+     <option value="available">Available</option>
+     <option value="sold">Sold</option>                                    
+  </select>
+  <br>
+  <br>
+</label>
+<label>
+  Image: 
+   <input type="text" name="imageUrl" value= "{{product.imageUrl}}" placeholder="Description...">
+</label>
+  <br>
+  <br>
+<label>
+  More details: 
+  <input type="text" name="pdfLink" value= "{{product.pdflink}}" placeholder="Rating (1-10)">
+</label>
+ <br>
+ <br>
+
+  
+  <button>Update This product</button>
+</form>
+</div>

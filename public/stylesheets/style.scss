@@ -31,6 +31,7 @@ a {
   padding-left: 20px;
 }
 
+
 #logout, #user-email {
   float: right;
   padding-right: 20px;
@@ -73,12 +74,7 @@ a {
   padding-left: 60px;
 }
 
-.sign-up {
-  font-size: 17px;
-  padding: 40px 40px;
-}
-
-.log-in {
+.sign-up, .log-in, .contact-page, .daily-page, .product-edit {
   font-size: 17px;
   padding: 40px 40px;
 }
@@ -86,11 +82,6 @@ a {
 .about-page {
   font-size: 17px;
   padding: 20px 20px;
-}
-
-.contact-page {
-  font-size: 17px;
-  padding: 40px 40px;
 }
 
 .columns {
@@ -135,6 +126,9 @@ a {
   margin-top: 50px;
   margin-left: 160px;
 }
+
+
+
 
 //   margin-top: 70%;
 //   background: slategray;

@@ -1,0 +1,13 @@
+<ul>
+  {{#each userList}}
+    <li>
+        <h3>Users list</h3>
+        <ul>
+            <li>Email: {{this.email}}</li>
+            <li>Role: {{this.role}}</li>
+            <li>Registred: {{this.createdAt}}</li>
+
+        </ul>
+    </li>
+  {{/each}}
+</ul>

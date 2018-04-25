@@ -2,7 +2,6 @@ const express = require("express");
 const passport = require('passport');
 const departRoutes = express.Router();
 const User = require("../models/User");
-const Seller = require("../models/Seller");
 const Product = require("../models/Product");
 
 
@@ -14,8 +13,17 @@ departRoutes.get("/departments", (req, res, next) => {
   res.render("depart/departments-page");
 });
 
-departRoutes.get("/allproducts", (req, res, next) => {
-  res.render("depart/allproducts");
-});
+departRoutes.get("/products", (req, res, next) => {
+  Product.find()
+    
+    .then((productsFromDb) => {
+       res.locals.productList = productsFromDb;
+       res.render("depart/products");
+    })
+    .catch((err) => {
+      
+      next(err);
+    });
+  });
 
 module.exports = departRoutes;
