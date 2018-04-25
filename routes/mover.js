@@ -2,7 +2,6 @@ const express = require("express");
 const passport = require('passport');
 const moverRoutes = express.Router();
 const User = require("../models/User");
-
 const Product = require("../models/Product");
 
 moverRoutes.get("/mover", (req, res, next) => {
@@ -19,6 +18,7 @@ moverRoutes.post("/process-add", (req,res,next) => {
   const {department, productType, productName, brand,model ,description, status, imageUrl, pdflink} = req.body;
 
   Product.create({department, productType, productName, brand,model, description, status, imageUrl, pdflink, userId: req.user._id})
+
     .then(() => {
        // res.flash("success", "room created");
         res.redirect('/mover');        

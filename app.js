@@ -82,4 +82,7 @@ app.use('/', dailyRoutes);
 const adminRoutes = require("./routes/admin-router");
 app.use("/", adminRoutes);
 
+const mapRoutes = require('./routes/map');
+app.use('/', mapRoutes);
+
 module.exports = app;

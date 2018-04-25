@@ -126,6 +126,22 @@ a {
   margin-top: 50px;
   margin-left: 160px;
 }
+.container-login-form{
+  display: flex;
+  width:400px;
+  margin: 20px auto;
+  flex-direction: column
+}
+.container-map {
+  display: flex;
+  flex-direction: column;
+  margin: 5px auto;
+  align-items: center;
+}
+.my-map {
+  height: 60vh;
+  width:80vw
+}
 
 
 
