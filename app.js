@@ -77,4 +77,7 @@ const departRoutes = require('./routes/depart');
 app.use('/', departRoutes);
 
 
+const mapRoutes = require('./routes/map');
+app.use('/', mapRoutes);
+
 module.exports = app;

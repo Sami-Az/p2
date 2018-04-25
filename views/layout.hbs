@@ -11,13 +11,13 @@
       <a href="/">Home</a>
       <a href="/about">About</a>
       <a href="/contact">Contact</a> 
+      <a href="/mapOverview">Map Overview</a> 
 
     {{#if blahUser}}
+      
       <strong id="user-email">{{blahUser.email}}</strong>
-      <a href="/logout" id="logout">Logout</a>
-        {{#if blahUser.sellerStatus}}
-          <a href="/seller">Seller Page</a>
-        {{/if}}
+      <a href="/logout" id="logout">Logout</a>      
+          <a href="/mover">mover Page</a>       
     {{else}}        
       <a href="/login">Login</a>
       <a href="/signup">Signup</a>
@@ -30,6 +30,8 @@
 
 
     <script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyALMnPEQBT3gTRM6Wj24KZAxktd0aagFlk"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src='/javascripts/script.js'></script>
   </body>
 </html>

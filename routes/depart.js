@@ -2,7 +2,7 @@ const express = require("express");
 const passport = require('passport');
 const departRoutes = express.Router();
 const User = require("../models/User");
-const Seller = require("../models/Seller");
+
 const Product = require("../models/Product");
 
 

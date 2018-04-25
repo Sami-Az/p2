@@ -9,15 +9,18 @@ const Product = require("../models/Product");
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
-
 // Sign-up 
 authRoutes.get("/signup", (req, res, next) => {
   res.render("auth/signup-page");
 });
 
 authRoutes.post("/process-signup", (req, res, next) => {
-  const {fullname, email, sellerStatus, password} = req.body;
-  console.log(req.body);
+  
+ const {fullname, email, phoneNumber, password, latitude, longitude} = req.body;
+ const location = {
+                    type: 'Point',
+                    coordinates: [ latitude, longitude ]
+                  };
   if (email === "" || password === "") {
     res.render("auth/signup-page", { message: "Indicate email and password" });
     return;
@@ -33,7 +36,7 @@ authRoutes.post("/process-signup", (req, res, next) => {
     const hashPass = bcrypt.hashSync(password, salt);
     ;
     
-   User.create({fullname, email, sellerStatus, encryptedPassword: hashPass })
+   User.create({fullname, email, phoneNumber, encryptedPassword: hashPass, location })
    .then(() => {
       res.redirect("/");
    })
