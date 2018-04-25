@@ -6,15 +6,14 @@ const productSchema = new Schema({
   productType:  { type: String, enum:["Television", "Phone", "Washing","Cold", "Furniture", "Bed room"]},
   productName:  { type: String, required: true},
   brand:        { type: String, required: true},
-  model:        { type: String, required: true},
-  price:        { type: Number, required: true},
+  model:        { type: String, required: true},  
   description:  { type: String, required: true},
-  status:       { type: String, enum: ["available", "sold"], required: true, default: "available"},
+  status:       { type: String, enum: ["available", "no more available"], required: true, default: "available"},
   imageUrl:     { type: String, required: true},
   pdflink:      { type: String, required: false},
-  sellerId:{
+  userId:{
           type: Schema.Types.ObjectId,
-          ref: "Seller",
+          ref: "User",
           required: true
         }  
 }, {
