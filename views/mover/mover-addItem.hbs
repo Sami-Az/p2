@@ -1,0 +1,79 @@
+<div class = "container">
+                  <div class="container-moverAdd-form notification columns">
+                    <form action="/add-item" method = "POST">
+                      <label >
+                          <h4 class="subtitle is-6">Department:</h4>
+                            <select name="department" id="ddlDepartment" class="button">
+                                    <option value=""></option>
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="Home appliance">Home appliance</option>
+                                    <option value="Home furnishing">Home furnishing</option>                                    
+                            </select>
+                      </label>
+                      <br/>
+                      <label  >
+                          <h4 class="subtitle is-6">ProductType:</h4>
+                            <select name="productType" id="ddlProductType"  class="button" >
+                                    <option value=""></option>                        
+                                    <option value="Television">Television</option>
+                                    <option value="Phone">Phone</option>
+                                    <option value="Washing machine">Washing machine</option> 
+                                    <option value="Fridge machine">Frigde machine</option>                                   
+                            </select>
+                          </button>
+                      </label> 
+                      <br/>     
+                      <label >
+                          <h4 class="subtitle is-6">Produit:</h4>
+                            <input class="input" type="text" name="productName" placeholder="Product name">
+                      </label> 
+                      <br/> 
+                       <label >
+                          <h4 class="subtitle is-6">Brand:</h4>
+                            <input class="input" type="text" name="brand" placeholder="Brand">
+                      </label> 
+                      <br/>  
+                       <label >
+                          <h4 class="subtitle is-6">Model:</h4>
+                            <input class="input" type="text" name="model" placeholder="Model">
+                      </label> 
+                      <br/>
+                      <label >
+                          <h4 class="subtitle is-6">Price:</h4>
+                            <input class="input" type="number" name="price" placeholder="price">
+                      </label> 
+                      <br/>
+                       <label >
+                          <h4 class="subtitle is-6">Description:</h4>
+                          <textarea class= "input" type="text" name="description" placeholder="description" rows="4" cols="50"></textarea>
+                      </label>
+                      <br/>
+                       <label >
+                          <h4 class="subtitle is-6">Status:</h4>
+                              <select name="status" class="button">
+                                    <option value="available">Available</option>
+                                    <option value="sold">Sold</option>                                    
+                            </select>                            
+                      </label>
+                      <br/>
+                       <label >
+                          <h4 class="subtitle is-6">imageUrl:</h4>
+                            <input class= "input" type="text" name="imageUrl" placeholder="imageUrl......">
+                      </label>
+                      <br/>
+                      <label >
+                          <h4 class="subtitle is-6">pdflink:</h4>
+                            <input class="input" type="text" name="pdflink" placeholder="pdflink......">
+                      </label>
+                      <br/>
+                      <div class = "btn-addNewItems">
+                        <button class="button is-link"> Add nex items</button>
+                      </div>
+                      
+                    </form>
+           </div>
+        </div>
+
+    </div>
+  </div>
+</div>

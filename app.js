@@ -70,4 +70,7 @@ app.use('/', index);
 const authRoutes = require('./routes/auth');
 app.use('/', authRoutes);
 
+const moverRoutes = require('./routes/mover');
+app.use('/', moverRoutes);
+
 module.exports = app;

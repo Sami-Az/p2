@@ -80,8 +80,19 @@ a {
   font-size: 18px;
   padding-left: 130px;
 }
+.container-sellerAdd-form{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 15px auto;
+  height:94vh;
+}
+.btn-addNewItems{
+  display: flex;
+  margin-top: 50px;
+  margin-left: 160px;
+}
 
-// footer {
 //   margin-top: 70%;
 //   background: slategray;
 //   border: 2px solid tomato;
@@ -94,3 +105,4 @@ a {
 //   float: right;
 //   padding-right: 25px;
 // }
+

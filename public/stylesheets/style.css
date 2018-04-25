@@ -68,4 +68,16 @@ a {
   font-size: 18px;
   padding-left: 130px; }
 
+.container-sellerAdd-form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 15px auto;
+  height: 94vh; }
+
+.btn-addNewItems {
+  display: flex;
+  margin-top: 50px;
+  margin-left: 160px; }
+
 /*# sourceMappingURL=style.css.map */
