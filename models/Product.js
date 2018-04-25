@@ -2,8 +2,10 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const productSchema = new Schema({
-  department:   { type: String, enum: ["Electronics", "Home appliance", "Home furnishing"]},
-  productType:  { type: String, enum:["Television", "Phone", "Washing","Cold", "Furniture", "Bed room"]},
+
+  department:   { type: Array, enum: ["Electronics", "Home appliance", "Home furnishing"]},
+  productType:  { type: Array, enum:["Television", "Phone", "Washing machine","Refrigerator", "Furniture", "Bed room"]},
+
   productName:  { type: String, required: true},
   brand:        { type: String, required: true},
   model:        { type: String, required: true},  

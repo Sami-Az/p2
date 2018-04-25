@@ -8,8 +8,13 @@ header {
   height: 60px; }
 
 h2 {
+  padding-left: 30px;
   margin-top: 30px;
   font-weight: bold; }
+
+h3 {
+  padding-left: 30px;
+  margin-top: 15px; }
 
 nav {
   font-size: 16px;
@@ -24,6 +29,36 @@ a {
 #logout, #user-email {
   float: right;
   padding-right: 20px; }
+
+.departs {
+  font-size: 17px;
+  padding: 40px 40px; }
+
+#all-products-link {
+  font-size: 14px; }
+
+#products {
+  padding-right: 80px;
+  height: 300px; }
+
+#two-fifth {
+  background-image: url("https://www.sonycenter.lu/13855-large_default/kdl-43we750.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-right: 50px; }
+
+#first-fifth {
+  background-image: url("https://images.homedepot-static.com/productImages/3ce1c600-2c7c-4a57-8720-1dd47e3d9f44/svn/stainless-steel-lg-electronics-french-door-refrigerators-lfxs30796s-64_1000.jpg");
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+#sec-fifth {
+  background-image: url("https://www.ikea.com/PIAimages/0173791_PE328445_S5.JPG");
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+#products-button {
+  padding-left: 60px; }
 
 .sign-up {
   font-size: 17px;

@@ -73,4 +73,8 @@ app.use('/', authRoutes);
 const moverRoutes = require('./routes/mover');
 app.use('/', moverRoutes);
 
+const departRoutes = require('./routes/depart');
+app.use('/', departRoutes);
+
+
 module.exports = app;
