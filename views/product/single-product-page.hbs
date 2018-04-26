@@ -1,0 +1,51 @@
+ <div class="single-product">
+     <h2>Single Product Page</h2>
+     <br>
+         {{!-- <h2>{{product.productName}}</h2>
+           <p>Brand: {{product.brand}}</p>
+           <p>Model : {{product.model}}</p>
+           <p>{{product.description}}</p>
+           <p>Status: {{product.status}}</p>
+           <img src="{{product.imageUrl}}" alt="">
+           <p>
+             <a href="/{{product.pdflink}}"> See more details:</a>
+           </p>
+           <br>
+           <p>Added on {{product.created_at}}</p>
+
+         <hr> --}}
+
+
+<div class="card">
+  <div class="card-content single-card">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-128x128">
+          <img src="{{product.imageUrl}}" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">{{product.productName}}</p>
+        <p class="subtitle is-6">Brand: {{product.brand}}</p>
+      </div>
+    </div>
+
+    <div class="content">
+      {{product.description}}
+      <br>
+      <br>
+        <p>Added on {{product.created_at}}</p>
+      <br>
+      <p>
+      <a href="/{{product.pdflink}}"> See more details:</a>
+      </p>
+    </div>
+  </div>
+<br>
+<br>
+</div>
+
+ </div>
+
+
+

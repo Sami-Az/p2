@@ -5,7 +5,7 @@ const productSchema = new Schema({
 
   department:   { type: String, enum: ["Electronics", "Home appliance", "Home furnishing"]},
   productType:  { type: String, enum:["Television", "Phone", "Washing machine", "Refrigerator", "Bed", "Table"]},
-
+  
   productName:  { type: String, required: true},
   brand:        { type: String, required: true},
   model:        { type: String, required: true},  

@@ -42,13 +42,17 @@ a {
   padding: 40px 40px;
 }
 
-#all-products-link {
- font-size: 14px;
+#departments {
+  color: black;
 }
 
 #products{
   padding-right: 80px;
   height: 300px;
+}
+
+#admin-zone {
+  color: white;
 }
 
 #two-fifth {
@@ -73,8 +77,10 @@ a {
 #products-button {
   padding-left: 60px;
 }
-
-.sign-up, .log-in, .contact-page, .daily-page, .product-edit {
+#all-users {
+  color: black;
+}
+.sign-up, .log-in, .contact-page, .daily-page, .product-edit, .user-list {
   font-size: 17px;
   padding: 40px 40px;
 }

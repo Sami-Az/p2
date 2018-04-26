@@ -18,11 +18,10 @@
       <strong id="user-email">{{blahUser.email}}</strong>
 
       <a href="/logout" id="logout">Logout</a>
-      <a href="/mover"> Mover Zone</a>
+     
       {{#if blahUser.isAdmin}}
-         <!--"isAdmin" is defined in the model -->
-          <h3>Admin Zone</h3>
-          <a href="/admin/users">All products</a>
+          <a id="admin-zone">Admin Zone</a>
+          <a href="/admin/users" id="all-users">All Users</a>
       {{/if}}
 
     {{else}}        
@@ -37,7 +36,7 @@
 
 
     <script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyALMnPEQBT3gTRM6Wj24KZAxktd0aagFlk"></script>
+    <script  src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDEmqlOaQdjaDC5AG-yqIkSEKQfBhmfNCk"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src='/javascripts/script.js'></script>
   </body>

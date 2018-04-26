@@ -3,15 +3,21 @@
 
 <div class="columns">
   <div class="column department">
-    <a href="/departments">Department</a> 
+    <a href="/departments" id="departments">Department</a> 
     <br>
     <br>
     <br>
     <a href="/products" id="all-products-link">All Products</a>
+    <br>
+    <br>
+    <br>
+     {{#if blahUser.isMover}}
+      <a href="/mover" id="mover-zone"> Mover zone</a>
+      {{/if}}
   </div>
-  <div class="column sellers">Sellers</div>
+  <div class="column sellers"></div>
   <div class="column is-half">
-    <a href="/daily">Daily pick</a>
+    {{!-- <a href="/daily">Daily pick</a> --}}
   </div>
     
 </div>

@@ -28,6 +28,13 @@ const userSchema = new Schema({
 userSchema.virtual("isAdmin").get( function () {
   return this.role === "admin";
 });
+
+userSchema.virtual("isMover").get( function () {
+  return this.role === "mover";
+});
+
+
+
 userSchema.index({ location: "2dsphere" });
 
 const User = mongoose.model('User', userSchema);

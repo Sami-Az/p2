@@ -64,7 +64,7 @@ moverRoutes.get("/products/:productId", (req, res, next) => {
   Product.findById(req.params.productId)
   .then((productDetails) =>  {
     res.locals.product = productDetails;
-    res.render("single-product-page");
+    res.render("product/single-product-page");
   })
   .catch((err) => {
     //show the error page with this error

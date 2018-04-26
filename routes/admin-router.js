@@ -23,4 +23,18 @@ adminRoutes.get("/admin/users", (req, res, next) => {
     });
 });
 
+
+// Deleting a user
+adminRoutes.get("/admin/users/:userId/delete", (req, res, next) => {
+  User.findByIdAndRemove(req.params.userId)
+  .then (() => {
+    res.redirect("/admin/users");
+  })
+  .catch ((err) => {
+     next(err);
+  });
+});
+
+
+
 module.exports = adminRoutes;
