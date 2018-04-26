@@ -45,14 +45,14 @@ axios.get("/moverMap/data")
                               map: map,
                               title: " Posted date : "+ new Date(oneProduct.created_at).toDateString()+" - "+ oneProduct.product +" "+oneProduct.brand+ ":"+oneProduct.model,
                               imageUrl: oneProduct.imageUrl,
+                              productId: oneProduct._id,
                               animation: google.maps.Animation.DROP
                             }); 
       marker.push(eachMarker)    
     });
     marker.forEach(oneMarker => {
       oneMarker.addListener('click', function() {
-        console.log("oneMarker="+ oneMarker)
-            document.location.href = "http://localhost:3000/allproducts/"+oneMarker.imageUrl
+            document.location.href = "/products/"+oneMarker.productId;
       }); 
       oneMarker.addListener( 'mouseover', function() {
         this.setIcon(oneMarker.imageUrl);

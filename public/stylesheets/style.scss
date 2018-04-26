@@ -31,6 +31,7 @@ a {
   padding-left: 20px;
 }
 
+
 #logout, #user-email {
   float: right;
   padding-right: 20px;
@@ -41,13 +42,17 @@ a {
   padding: 40px 40px;
 }
 
-#all-products-link {
- font-size: 14px;
+#departments {
+  color: black;
 }
 
 #products{
   padding-right: 80px;
   height: 300px;
+}
+
+#admin-zone {
+  color: white;
 }
 
 #two-fifth {
@@ -72,13 +77,10 @@ a {
 #products-button {
   padding-left: 60px;
 }
-
-.sign-up {
-  font-size: 17px;
-  padding: 40px 40px;
+#all-users {
+  color: black;
 }
-
-.log-in {
+.sign-up, .log-in, .contact-page, .daily-page, .product-edit, .user-list {
   font-size: 17px;
   padding: 40px 40px;
 }
@@ -86,11 +88,6 @@ a {
 .about-page {
   font-size: 17px;
   padding: 20px 20px;
-}
-
-.contact-page {
-  font-size: 17px;
-  padding: 40px 40px;
 }
 
 .columns {

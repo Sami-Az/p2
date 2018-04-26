@@ -15,7 +15,16 @@ departRoutes.get("/departments", (req, res, next) => {
 });
 
 departRoutes.get("/allproducts", (req, res, next) => {
-  res.render("depart/allproducts");
-});
+  Product.find()
+    
+    .then((productsFromDb) => {
+       res.locals.productList = productsFromDb;
+       res.render("depart/products");
+    })
+    .catch((err) => {
+      
+      next(err);
+    });
+  });
 
 module.exports = departRoutes;

@@ -11,14 +11,20 @@ const userSchema = new Schema({
           enum: ["mover", "admin"],
           default: "mover"
          }
+
 }, {
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at'
   }
 });
+
 userSchema.virtual("isAdmin").get( function () {
   return this.role === "admin";
+});
+
+userSchema.virtual("isMover").get( function () {
+  return this.role === "mover";
 });
 
 const User = mongoose.model('User', userSchema);

@@ -1,0 +1,20 @@
+<div class="user-list">
+   <ul>
+   <h2>Users list</h2>
+   <br>
+   <br>
+  {{#each userList}}
+     
+        <ul>
+            <li>Email: {{this.email}}</li>
+            <li>Role: {{this.role}}</li>
+            <li>Registred: {{this.created_at}}</li>
+
+        </ul>
+        <br>
+          <a href="/admin/users/{{this._id}}/delete">Delete</a>
+        <br>
+        <br>
+  {{/each}}
+</ul>
+</div>

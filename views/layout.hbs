@@ -26,11 +26,14 @@
       <div class="dropdown">
         <button class="button is-dark"><a href="/mover">mover Page</a></button>
           <div class="dropdown-content">
-            <a href="/mover/moveraddItem">Add Item</a>
+            <a href="/mover/add">Add Item</a>
             <a href="#">Link 2</a>
             <a href="#">Link 3</a>
-      </div>
-</div>      
+          </div>
+      </div>         
+      {{#if blahUser.isAdmin}}
+         <button class="button is-dark"><a href="/admin/users">Admin</a></button>
+      {{/if}}
     {{else}}        
       <button class="button is-dark"><a href="/login">Login</a></button>
       <button class="button is-dark"><a href="/signup">Signup</a></button>

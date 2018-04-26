@@ -76,6 +76,12 @@ app.use('/', moverRoutes);
 const departRoutes = require('./routes/depart');
 app.use('/', departRoutes);
 
+const dailyRoutes = require('./routes/daily');
+app.use('/', dailyRoutes);
+
+const adminRoutes = require("./routes/admin-router");
+app.use("/", adminRoutes);
+
 const mapRoutes = require('./routes/map');
 app.use('/', mapRoutes);
 
