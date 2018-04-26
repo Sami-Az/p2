@@ -13,11 +13,13 @@ moverRoutes.get("/mover/moveraddItem", (req, res, next) => {
 })
 
 moverRoutes.post("/add-item", (req,res,next) => {
- // console.log( req)
- // res.send(req)
-  const {department, productType, productName, brand,model,description, status, imageUrl, pdflink} = req.body;
+  const {productType, product, brand, model, description, status, imageUrl, pdflink,latitude, longitude} = req.body;
+  const location = {
+                     type: 'Point',
+                     coordinates: [ latitude, longitude ]
+                   };
 
-  Product.create({department, productType, productName, brand,model,description, status, imageUrl, pdflink, userId: req.user._id})
+  Product.create({productType, product, brand,model,description, status, imageUrl, pdflink, userId: req.user._id, location})
     .then(() => {
        // res.flash("success", "room created");
         res.redirect('/mover');        

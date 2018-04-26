@@ -16,12 +16,8 @@ authRoutes.get("/signup", (req, res, next) => {
 
 authRoutes.post("/process-signup", (req, res, next) => {
   
- const {fullname, email, phoneNumber, password, latitude, longitude} = req.body;
- const location = {
-                    type: 'Point',
-                    coordinates: [ latitude, longitude ]
-                  };
-  if (email === "" || password === "") {
+ const {fullname, email, phoneNumber, password} = req.body;
+ if (email === "" || password === "") {
     res.render("auth/signup-page", { message: "Indicate email and password" });
     return;
   }
@@ -36,7 +32,7 @@ authRoutes.post("/process-signup", (req, res, next) => {
     const hashPass = bcrypt.hashSync(password, salt);
     ;
     
-   User.create({fullname, email, phoneNumber, encryptedPassword: hashPass, location })
+   User.create({fullname, email, phoneNumber, encryptedPassword: hashPass})
    .then(() => {
       res.redirect("/");
    })

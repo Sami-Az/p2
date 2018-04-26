@@ -7,20 +7,33 @@
   </head>
   <body>
   <header>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a> 
-      <a href="/mapOverview">Map Overview</a> 
+    <nav>      
+       <div class="dropdown">
+        <button class="button is-dark"><a href="/">Home</a></button>
+          <div class="dropdown-content">
+            <a href="/departments"> By equipment</a>
+            <a href="/allproducts"> All products</a>
+            
+      </div>
+      <button class="button is-dark"><a href="/about">About</a></button>
+      <button class="button is-dark"><a href="/contact">Contact</a></button>
+      <button class="button is-dark"><a href="/mapOverview">Map Overview</a></button> 
 
     {{#if blahUser}}
       
       <strong id="user-email">{{blahUser.email}}</strong>
-      <a href="/logout" id="logout">Logout</a>      
-          <a href="/mover">mover Page</a>       
+      <button class="button is-dark"><a href="/logout" id="logout">Logout</a></button>
+      <div class="dropdown">
+        <button class="button is-dark"><a href="/mover">mover Page</a></button>
+          <div class="dropdown-content">
+            <a href="/mover/moveraddItem">Add Item</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+      </div>
+</div>      
     {{else}}        
-      <a href="/login">Login</a>
-      <a href="/signup">Signup</a>
+      <button class="button is-dark"><a href="/login">Login</a></button>
+      <button class="button is-dark"><a href="/signup">Signup</a></button>
     {{/if}}
     
     </nav>
@@ -30,7 +43,7 @@
 
 
     <script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyALMnPEQBT3gTRM6Wj24KZAxktd0aagFlk"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key={{mapKey}}"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src='/javascripts/script.js'></script>
   </body>

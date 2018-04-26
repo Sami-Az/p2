@@ -9,10 +9,9 @@ mapRoutes.get("/mapOverview", (req, res, next) => {
 });
 
 mapRoutes.get("/moverMap/data", (req, res, next) => {
-    console.log(" get in: -->/moverMap/data")
-  User.find()
+    console.log(" get in:/moverMap/data")
+    Product.find()
     .then((allMover) => {
-      console.log("allMover:"+allMover)
       res.json(allMover);
     })
     .catch((err) => {

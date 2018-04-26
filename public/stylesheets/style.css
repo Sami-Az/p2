@@ -115,20 +115,69 @@ a {
   margin-top: 50px;
   margin-left: 160px; }
 
-.container-login-form {
-  display: flex;
-  width: 400px;
-  margin: 20px auto;
-  flex-direction: column; }
-
-.container-map {
+.container-login-form, .container-map, .container-moverAdd-form {
   display: flex;
   flex-direction: column;
-  margin: 5px auto;
   align-items: center; }
+
+.container-login-form {
+  width: 400px;
+  margin: 20px auto; }
+
+.container-map {
+  margin: 5px auto; }
 
 .my-map {
   height: 60vh;
   width: 80vw; }
+
+.container-moverAdd-form {
+  height: 60vh;
+  width: 80vw;
+  margin: 0 auto; }
+
+.addItem-textArea {
+  width: 400px;
+  height: 200px; }
+
+/**********************/
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none; }
+
+.dropdown {
+  position: relative;
+  display: inline-block; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1; }
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; }
+
+.dropdown-content a:hover {
+  background-color: #ddd; }
+
+.dropdown:hover .dropdown-content {
+  display: block; }
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41; }
+
+.container-slider {
+  display: flex;
+  flex-direction: row;
+  height: 50vh; }
 
 /*# sourceMappingURL=style.css.map */

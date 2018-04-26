@@ -1,19 +1,19 @@
 <div class = "container">
-                  <div class="container-moverAdd-form notification columns">
-                    <form action="/add-item" method = "POST">
-                      <label >
-                          <h4 class="subtitle is-6">Department:</h4>
-                            <select name="department" id="ddlDepartment" class="button">
+                <div class="container-moverAdd-form">
+                  <h2 class="title is-3">Add item</h2>
+                    <form action="/add-item" method = "POST" class="notification">        
+                      <div class="login-form-padding">             
+                          <h4 class="subtitle is-6 ">Product type</h4>
+                            <select name="productType" id="ddlProductType" class="button">
                                     <option value=""></option>
                                     <option value="Electronics">Electronics</option>
                                     <option value="Home appliance">Home appliance</option>
                                     <option value="Home furnishing">Home furnishing</option>                                    
-                            </select>
-                      </label>
-                      <br/>
-                      <label  >
-                          <h4 class="subtitle is-6">ProductType:</h4>
-                            <select name="productType" id="ddlProductType"  class="button" >
+                            </select> 
+                      </div>                      
+                            <br/>
+                          <h4 class="subtitle is-6 ">Produit</h4>
+                            <select name="product" id="ddlProduct"  class="button " >
                                     <option value=""></option>                        
                                     <option value="Television">Television</option>
                                     <option value="Phone">Phone</option>
@@ -21,56 +21,38 @@
                                     <option value="Fridge machine">Frigde machine</option>                                   
                             </select>
                           </button>
-                      </label> 
-                      <br/>     
-                      <label >
-                          <h4 class="subtitle is-6">Produit:</h4>
-                            <input class="input" type="text" name="productName" placeholder="Product name">
-                      </label> 
                       <br/> 
-                       <label >
-                          <h4 class="subtitle is-6">Brand:</h4>
+                          <h4 class="subtitle is-6 ">Brand</h4>
                             <input class="input" type="text" name="brand" placeholder="Brand">
-                      </label> 
-                      <br/>  
-                       <label >
-                          <h4 class="subtitle is-6">Model:</h4>
+                     <br/>  
+                          <h4 class="subtitle is-6 ">Model</h4>
                             <input class="input" type="text" name="model" placeholder="Model">
-                      </label> 
+                       <h5 class="subtitle is-6 ">Product's pick up adress </h5>        
+                        <input class="input location-input" type="text" placeholder="12..."/>        
                       <br/>
-                      <label >
-                          <h4 class="subtitle is-6">Price:</h4>
-                            <input class="input" type="number" name="price" placeholder="price">
-                      </label> 
+                        <!-- these will be set by out Place Autocomplete -->
+                        <input type="hidden" name="latitude" class="lat-input" />
+                        <input type="hidden" name="longitude" class="lng-input" />
+                         <h4 class="subtitle is-6 ">Description:</h4>
+                          <textarea class= "input addItem-textArea" type="text" name="description" placeholder="description" rows="4" cols="50"></textarea>
                       <br/>
-                       <label >
-                          <h4 class="subtitle is-6">Description:</h4>
-                          <textarea class= "input" type="text" name="description" placeholder="description" rows="4" cols="50"></textarea>
-                      </label>
-                      <br/>
-                       <label >
-                          <h4 class="subtitle is-6">Status:</h4>
+                         <h4 class="subtitle is-6 ">Status</h4>
                               <select name="status" class="button">
                                     <option value="available">Available</option>
                                     <option value="sold">Sold</option>                                    
                             </select>                            
-                      </label>
-                      <br/>
-                       <label >
-                          <h4 class="subtitle is-6">imageUrl:</h4>
+                     <br/>
+                        <h4 class="subtitle is-6 ">imageUrl</h4>
                             <input class= "input" type="text" name="imageUrl" placeholder="imageUrl......">
-                      </label>
                       <br/>
-                      <label >
-                          <h4 class="subtitle is-6">pdflink:</h4>
+                       <h4 class="subtitle is-6">pdflink detail</h4>
                             <input class="input" type="text" name="pdflink" placeholder="pdflink......">
-                      </label>
-                      <br/>
+                       <br/>
                       <div class = "btn-addNewItems">
                         <button class="button is-link"> Add nex items</button>
-                      </div>
-                      
+                      </div>                      
                     </form>
+                <div class="my-map" style="display: none;"></div>
            </div>
         </div>
 

@@ -58,9 +58,9 @@ app.use(session ({
 }));
 
 
-
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.mapKey = process.env.mapKey;
 
 passportSetup(app);
 
@@ -75,7 +75,6 @@ app.use('/', moverRoutes);
 
 const departRoutes = require('./routes/depart');
 app.use('/', departRoutes);
-
 
 const mapRoutes = require('./routes/map');
 app.use('/', mapRoutes);

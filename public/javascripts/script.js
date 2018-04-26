@@ -3,24 +3,18 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('IronGenerator JS imported successfully!');
 
 
-console.log(ddlDepartement)
 }, false);
 
-
-var ddlDepartement = $("#ddlDepartment").change( function () {
-  return this.value;
-;})
-
-$("#ddlDepartment").change(function() {  
+$("#ddlProductType").change(function() {  
         var valSelected = $(this).val();
         switch (valSelected){
           case "Electronics":
-            $('#ddlProductType option[value ="Washing machine"]').hide();
-            $('#ddlProductType option[value ="Fridge machine"]').hide();
+            $('#ddlProduct option[value ="Washing machine"]').hide();
+            $('#ddlProduct option[value ="Fridge machine"]').hide();
           break;
           case "Home appliance":
-            $('#ddlProductType option[value ="Television"]').hide();
-            $('#ddlProductType option[value ="Phone"]').hide();
+            $('#ddlProduct option[value ="Television"]').hide();
+            $('#ddlProduct option[value ="Phone"]').hide();
           break;
           case "Home furnishing":
           
@@ -40,21 +34,36 @@ const map =
 // retrieve restaurant data from our backend
 axios.get("/moverMap/data")
   .then((response) => {
-    const moverList = response.data;
-    console.log(moverList);
-    moverList.forEach((oneUser) => {
-      const [ lat, lng ] = oneUser.location.coordinates;
-      new google.maps.Marker({
+    const productList = response.data;
+    console.log(productList);
+    var marker=[];
+    productList.forEach(oneProduct => {
+      const [ lat, lng ] = oneProduct.location.coordinates;
+      console.log("[ lat, lng ]="+[ lat, lng ]);
+      var eachMarker = new google.maps.Marker({
                               position: { lat, lng },
                               map: map,
-                              title: oneUser.name,
+                              title: " Posted date : "+ new Date(oneProduct.created_at).toDateString()+" - "+ oneProduct.product +" "+oneProduct.brand+ ":"+oneProduct.model,
+                              imageUrl: oneProduct.imageUrl,
                               animation: google.maps.Animation.DROP
-                            });
-      
+                            }); 
+      marker.push(eachMarker)    
+    });
+    marker.forEach(oneMarker => {
+      oneMarker.addListener('click', function() {
+        console.log("oneMarker="+ oneMarker)
+            document.location.href = "http://localhost:3000/allproducts/"+oneMarker.imageUrl
+      }); 
+      oneMarker.addListener( 'mouseover', function() {
+        this.setIcon(oneMarker.imageUrl);
+      })
+      oneMarker.addListener( 'mouseout', function() {
+        this.setIcon(null);
+      });
     });
   })
   .catch((err) => {
-    alert("Something went wrong! 💩");
+  alert("Something went wrong! 💩");
   });
 
 const locationInput = document.querySelector(".location-input");
