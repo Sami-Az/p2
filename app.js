@@ -15,10 +15,9 @@ const passport     = require("passport");
 const bcrypt = require("bcrypt");
 
 
-
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/p2', {useMongoClient: true})
+  .connect(process.env.MONGODB_URI, {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
