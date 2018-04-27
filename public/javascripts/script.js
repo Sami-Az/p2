@@ -87,19 +87,23 @@ function rotate() {
 	$('#next').click();
 }
 
+
+
 $("#ddlProductType").change(function() {  
         var valSelected = $(this).val();
         switch (valSelected){
           case "Electronics":
             $('#ddlProduct option[value ="Washing machine"]').hide();
             $('#ddlProduct option[value ="Refrigerator"]').hide();
+            $('#ddlProduct option[value ="Table"]').hide();
+            $('#ddlProduct option[value ="Bed"]').hide();
           break;
           case "Home appliance":
             $('#ddlProduct option[value ="Television"]').hide();
             $('#ddlProduct option[value ="Phone"]').hide();
           break;
           case "Home furnishing":
-          
+            $('#ddlProduct option[value ="Phone"]').hide();
           break;
         }          
   });

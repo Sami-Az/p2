@@ -3,33 +3,42 @@
                   <h2 class="title is-3">Add item</h2>
                     <form action="/process-add" method = "POST" class="notification">        
                       <div class="login-form-padding">             
-                          <h4 class="subtitle is-6 ">Product type</h4>
+                          <h4 class="subtitle is-6 ">Category</h4>
                             <select name="productType" id="ddlProductType" class="button">
                                     <option value=""></option>
                                     <option value="Electronics">Electronics</option>
                                     <option value="Home appliance">Home appliance</option>
-                                    <option value="Home furnishing">Home furnishing</option>                                    
+                                    <option value="Home furnishing">Home furnishing</option>                                   
                             </select> 
                       </div>                      
-                            <br/>
-                          <h4 class="subtitle is-6 ">Produit</h4>
+                            <br>
+                            <br>
+                          <h4 class="subtitle is-6 ">Product</h4>
                             <select name="product" id="ddlProduct"  class="button " >
                                     <option value=""></option>                        
                                     <option value="Television">Television</option>
                                     <option value="Phone">Phone</option>
                                     <option value="Washing machine">Washing machine</option> 
-                                    <option value="Refrigerator">Refrigerator</option>                                   
+                                    <option value="Refrigerator">Refrigirator</option>   
+                                    <option value="Table">Table</option>
+                                    <option value="Bed">Bed</option>
+                                    <option value="Other">Other</option>                                
                             </select>
                           </button>
-                      <br/> 
+                      <br> 
+                      <br>
                           <h4 class="subtitle is-6 ">Brand</h4>
                             <input class="input" type="text" name="brand" placeholder="Brand">
-                     <br/>  
+                     <br>  
+                     <br>
                           <h4 class="subtitle is-6 ">Model</h4>
-                            <input class="input" type="text" name="model" placeholder="Model">
+                          <input class="input" type="text" name="model" placeholder="Model">
+                          <br>
+                          <br>
                        <h5 class="subtitle is-6 ">Product's pick up adress </h5>        
                         <input class="input location-input" type="text" placeholder="12..."/>        
                       <br/>
+                      <br>
                         <!-- these will be set by out Place Autocomplete -->
                         <input type="hidden" name="latitude" class="lat-input" />
                         <input type="hidden" name="longitude" class="lng-input" />
@@ -39,9 +48,10 @@
                          <h4 class="subtitle is-6 ">Status</h4>
                               <select name="status" class="button">
                                     <option value="available">Available</option>
-                                    <option value="sold">Sold</option>                                    
+                                    <option value="sold">No longer Available</option>                                    
                             </select>                            
-                     <br/>
+                     <br>
+                     <br>
                         <h4 class="subtitle is-6 ">imageUrl</h4>
                             <input class= "input" type="text" name="imageUrl" placeholder="imageUrl......">
                       <br/>
@@ -49,7 +59,7 @@
                             <input class="input" type="text" name="pdflink" placeholder="pdflink......">
                        <br/>
                       <div class = "btn-addNewItems">
-                        <button class="button is-link"> Add nex items</button>
+                        <button class="button is-link"> Add this item</button>
                       </div>                      
                     </form>
                 <div class="my-map" style="display: none;"></div>

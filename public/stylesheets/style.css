@@ -5,7 +5,7 @@ body {
 
 header {
   background: #ceb699;
-  height: 60px; }
+  height: 95px; }
 
 h2 {
   padding-left: 30px;
@@ -18,7 +18,8 @@ h3 {
 
 nav {
   font-size: 16px;
-  padding-left: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   padding-top: 20px; }
 
 a {
@@ -26,9 +27,9 @@ a {
   text-decoration: none;
   padding-left: 20px; }
 
-#logout, #user-email {
-  float: right;
-  padding-right: 20px; }
+#user-email {
+  padding-top: 15px;
+  padding-left: 90px; }
 
 .departs {
   font-size: 17px;
@@ -42,7 +43,7 @@ a {
   height: 300px; }
 
 #admin-zone {
-  color: white; }
+  color: tomato; }
 
 #two-fifth {
   background-image: url("https://www.sonycenter.lu/13855-large_default/kdl-43we750.jpg");
@@ -66,9 +67,16 @@ a {
 #all-users {
   color: black; }
 
+#sign-up {
+  padding-left: 150px; }
+
 .sign-up, .log-in, .contact-page, .daily-page, .product-edit, .user-list {
   font-size: 17px;
   padding: 40px 40px; }
+
+#signup-list {
+  float: right;
+  width: 220px; }
 
 .about-page {
   font-size: 17px;
@@ -146,37 +154,62 @@ a {
   font-size: 16px;
   border: none; }
 
-.dropdown {
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #1bc2a2; }
+
+ul li {
+  display: block;
   position: relative;
-  display: inline-block; }
+  float: left;
+  background: #1bc2a2; }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1; }
+li ul {
+  display: none; }
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
+ul li a {
+  display: block;
+  padding: 1em;
   text-decoration: none;
-  display: block; }
+  white-space: nowrap;
+  color: #fff; }
 
-.dropdown-content a:hover {
-  background-color: #ddd; }
+ul li a:hover {
+  background: #2c3e50;
+  color: white; }
 
-.dropdown:hover .dropdown-content {
-  display: block; }
+li:hover > ul {
+  display: block;
+  position: absolute; }
 
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41; }
+li:hover li {
+  float: none; }
 
-.container-slider {
-  display: flex;
-  flex-direction: row;
-  height: 50vh; }
+li:hover a {
+  background: #1bc2a2; }
+
+li:hover li a:hover {
+  background: #2c3e50;
+  color: white; }
+
+.main-navigation li ul li {
+  border-top: 0; }
+
+ul ul ul {
+  left: 100%;
+  top: 0; }
+
+ul:before,
+ul:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+ul:after {
+  clear: both; }
 
 /**********************************  Custum carroussel ********************/
 #carousel-custum {
@@ -188,7 +221,7 @@ a {
   overflow: hidden;
   /* fix ie overflow issue */
   position: relative;
-  width: 100vw;
+  width: 80vw;
   height: 50vh;
   /*border:1px solid #ccc;*/ }
 

@@ -30,6 +30,46 @@ departRoutes.get("/allproducts", (req, res, next) => {
     .catch((err) => {      
       next(err);
     });
-  });
+});
+
+  // Electronics route
+departRoutes.get("/allproducts/electronics", (req, res, next) => {
+  Product.find({productType: "Electronics"})   
+  .then((productsFromDb) => {
+    console.log(":--->:"+productsFromDb);
+    res.locals.productList = productsFromDb
+    res.render("depart/electronics");
+  })
+  .catch((err) => {
+    next(err);
+  })
+});
+
+
+// Home appliance route
+departRoutes.get("/allproducts/homeappliance", (req, res, next) => {
+  Product.find({productType: "Home appliance"})   
+  .then((productsFromDb) => {
+    console.log("Home furniture:--->:"+productsFromDb);
+    res.locals.productList = productsFromDb
+    res.render("depart/home-appliance");
+  })
+  .catch((err) => {
+    next(err);
+  })
+});
+
+// Home fourniture route
+departRoutes.get("/allproducts/homefurniture", (req, res, next) => {
+  Product.find({productType: "Home furniture"})   
+  .then((productsFromDb) => {
+    console.log("Home furniture:--->:"+productsFromDb);
+    res.locals.productList = productsFromDb    
+    res.render("depart/home-furniture");
+  })
+  .catch((err) => {
+    next(err);
+  })
+});
 
 module.exports = departRoutes;

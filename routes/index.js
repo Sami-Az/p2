@@ -15,26 +15,16 @@ function formatDate(date) {
   return [year, month, day].join('-') + " "+['00','00','00'].join(':');
 }
 
+
 router.get('/', (req, res, next) => {
 
   var now = formatDate(new Date().setHours(0,0,0));
   console.log("now:"+now);
- /* var isDateNotEmpty = true;  
-  while (isDateNotEmpty){*/
-    Product.find({created_at:  {$gt: now}, productType: "Home appliance"})
+    Product.find({created_at:  {$gt: now}})
     .then( data => {
-     // console.log("data.length --> "+data.length)  
       if (data.length >0){
         res.render('index', {product: data}); 
-     /*   isDateNotEmpty = false;  
-        console.log("isDateNotEmpty --> "+isDateNotEmpty)    */
       }
-     /* else {
-        let i = -24;       
-        now = formatDate(new Date().setHours(i,0,0));
-        i -= 24;
-      }
-      console.log("hors isDateNotEmpty --> "+isDateNotEmpty)   */
     })
     .catch(err => {
         next(err);
