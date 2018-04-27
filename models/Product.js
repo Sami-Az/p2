@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
+
 const Schema   = mongoose.Schema;
 
 const productSchema = new Schema({
   productType:  { type: String, enum: ["Electronics", "Home appliance", "Home furnishing"]},
-  product:      { type: String, enum:["Television", "Phone", "Washing machine","Refrigerator", "Furniture", "Bed room"]},
+  product:      { type: String, enum:["Television", "Phone", "Washing machine","Fridge machine", "Furniture", "Bed room"]},
   brand:        { type: String, required: true},
   model:        { type: String, required: true},  
   description:  { type: String, required: true},
@@ -25,8 +26,9 @@ const productSchema = new Schema({
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at'
-  }
+  } 
 });
+
 productSchema.index({ location: "2dsphere" });
 const Product = mongoose.model('Product', productSchema);
 module.exports = Product;

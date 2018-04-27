@@ -14,15 +14,20 @@ departRoutes.get("/departments", (req, res, next) => {
   res.render("depart/departments-page");
 });
 
-departRoutes.get("/allproducts", (req, res, next) => {
-  Product.find()
-    
+departRoutes.get("/allproducts", (req, res, next) => {  
+  Product.find()    
     .then((productsFromDb) => {
-       res.locals.productList = productsFromDb;
-       res.render("depart/products");
+      productsFromDb.map(function(a) {
+          a = a.toObject()        
+          a.isMe = false;     
+          if(req.user !== undefined && req.user._id.toString() === a.userId.toString()){
+              a.isMe = true;
+          }
+          return a; 
+        })   
+       res.render("depart/products", { productList: productsFromDb });
     })
-    .catch((err) => {
-      
+    .catch((err) => {      
       next(err);
     });
   });

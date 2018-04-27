@@ -1,29 +1,44 @@
 
-<!--<div class="container">
-  <div class="container-slider">
-      <div class="hero-carousel carousel-animated carousel-animate-slide" data-autoplay="true">
-              <div class='carousel-container'>
-                <div class='carousel-item has-background is-active'>
-                  <img class="is-background" src="https://wikiki.github.io/images/merry-christmas.jpg" alt="" />
-                </div>
-                <div class='carousel-item has-background'>
-                  <img class="is-background" src="https://wikiki.github.io/images/singer.jpg" alt="" />
-                </div>
-                <div class='carousel-item has-background'>
-                  <img class="is-background" src="https://wikiki.github.io/images/sushi.jpg" alt="" />
-                </div>
-                <div class='carousel-item has-background'>
-                  <img class="is-background" src="https://wikiki.github.io/images/life.jpg" alt="" />
-                </div>
-              </div>
-              <div class="carousel-navigation is-overlay">
-                <div class="carousel-nav-left">
-                  <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                </div>
-                <div class="carousel-nav-right">
-                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                </div>
-              </div>
-      </div>
-  </div>
-</div>-->
+<div id="carousel-custum">
+	<div id="btns">
+		<a href="#" id="prev">prev</a>
+		<a href="#" id="next">next</a>
+		<div class="clear"></div>
+	</div>	
+	<div class="clear"></div>
+	<div id="slides" > 
+		<ul>
+      {{#each product}}
+        <li class="seller-product">
+              <img src="{{this.imageUrl}}"/>
+              <p>Brand: {{this.brand}}</p>
+              <p>Model: {{this.model}}</p>
+							<p style="display: none; " id="thisItem">{{this._id}}</p>          
+        </li>
+      {{/each}}
+			
+		</ul>
+		<div class="clear"></div>
+	</div> 
+</div>
+<div id="carousel-custum1">
+	<div id="btns">
+		<a href="#" id="prev">prev</a>
+		<a href="#" id="next">next</a>
+		<div class="clear"></div>
+	</div>	
+	<div class="clear"></div>
+	<div id="slides" > 
+		<ul>
+      {{#each product1}}
+        <li>
+              <img src="{{this.imageUrl}}"/>
+              <p>Brand: {{this.brand}}</p>
+              <p>Model: {{this.model}}</p>          
+        </li>
+      {{/each}}
+			
+		</ul>
+		<div class="clear"></div>
+	</div> 
+</div>
