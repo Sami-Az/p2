@@ -6,7 +6,8 @@ body {
 
 header {
   background: rgb(206, 182, 153);
-  height: 60px;
+  height: 95px;
+
 }
 h2 {
   padding-left: 30px;
@@ -21,7 +22,8 @@ h3 {
 
 nav {
   font-size: 16px;
-  padding-left: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   padding-top: 20px;
 }
 
@@ -32,9 +34,10 @@ a {
 }
 
 
-#logout, #user-email {
-  float: right;
-  padding-right: 20px;
+ #user-email {
+  
+  padding-top: 15px;
+  padding-left: 90px;
 }
 
 .departs {
@@ -52,7 +55,7 @@ a {
 }
 
 #admin-zone {
-  color: white;
+  color: tomato;
 }
 
 #two-fifth {
@@ -80,11 +83,19 @@ a {
 #all-users {
   color: black;
 }
+
+#sign-up {
+  padding-left: 150px;
+}
 .sign-up, .log-in, .contact-page, .daily-page, .product-edit, .user-list {
   font-size: 17px;
   padding: 40px 40px;
 }
 
+#signup-list {
+  float: right;
+  width: 220px;
+}
 .about-page {
   font-size: 17px;
   padding: 20px 20px;
@@ -165,38 +176,60 @@ a {
   border: none;
 }
 
-.dropdown {
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #1bc2a2;
+}
+
+ul li {
+  display: block;
   position: relative;
-  display: inline-block;
+  float: left;
+  background: #1bc2a2;
 }
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-.dropdown-content a:hover {background-color: #ddd}
+li ul { display: none; }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+ul li a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #fff;
 }
 
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+ul li a:hover { 
+  background: #2c3e50; 
+  color: white;
 }
-.container-slider{
-   display: flex;
-   flex-direction: row;
-   height: 50vh;
+
+li:hover > ul {
+  display: block;
+  position: absolute;
 }
+
+li:hover li { float: none; }
+
+li:hover a { background: #1bc2a2; }
+
+li:hover li a:hover { background: #2c3e50;  color: white; }
+
+.main-navigation li ul li { border-top: 0; }
+ul ul ul {
+  left: 100%;
+  top: 0;
+}
+ul:before,
+ul:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+ul:after { clear: both; }
+
+
 //   background: slategray;
 //   border: 2px solid tomato;
 //   padding-top: 30px;

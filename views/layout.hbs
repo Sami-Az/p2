@@ -8,14 +8,81 @@
   <body>
   <header>
     <nav>      
-       <div class="dropdown">
+       {{!-- <div class="dropdown">
         <button class="button is-dark"><a href="/">Home</a></button>
           <div class="dropdown-content">
-            <a href="/departments"> By equipment</a>
             <a href="/allproducts"> All products</a>
-            
-      </div>
-      <button class="button is-dark"><a href="/about">About</a></button>
+               <div class="dropdown-submenu">
+               <a href="/departments"> By Category</a>
+                  <div class="dropdown-content">
+                    <a href="/electronics">Electro</a>
+                    <a href="/homeappliance">HomeA</a>
+                    <a href="/homefurninishing">HomeF</a>
+                  </div>
+               </div>
+               
+          </div>   
+      </div> --}}
+
+
+<ul class="main-navigation">
+ {{!-- <button class="button is-dark"><a href="/">Home</a></button> --}}
+  <li><a href="/">Home</a></li>
+  <li><a href="/allproducts">Produtcs</a>
+    <ul>
+      <li><a href="/allproducts">All Products</a></li>
+      <li><a href="#">Categories</a>
+        <ul>
+          <li><a href="/allproducts/electronics">Electronics</a></li>
+          <li><a href="/allproducts/homeappliance">Home Appliance</a></li>
+          <li><a href="/allproducts/homefurniture">Home Furniture</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/about">About Us</a></li>
+  
+  <li><a href="/mapOverview">MapOverview</a></li>
+  <li><a href="/contact">Contact us</a> </li>
+   
+  {{#if blahUser}}
+      <li><a href="/mover">My Zone</a>
+          <ul>
+            <li><a href="/mover/add">Add Item</a></li>
+          </ul>
+      </li>
+     
+
+        
+      {{#if blahUser.isAdmin}}
+         <li><a href="/admin/users" id="admin-zone">Admin</a></li>
+      {{/if}}
+      <li><a href="/logout" id="logout">Logout</a></li>
+      <li id="user-email">{{blahUser.email}}</li>
+      
+    {{else}}        
+      <li><a href="/signup" id="sign-up">Sign in</a>
+    <ul id="signup-list">
+      <li><a href="/signup">New member ?</a></li>
+      <li><a href="/login">Login</a></li>
+      
+    </ul>
+    </li>
+    {{/if}} 
+   
+    </ul>
+  
+  
+
+
+
+  
+
+
+
+
+      
+      {{!-- <button class="button is-dark"><a href="/about">About</a></button>
       <button class="button is-dark"><a href="/contact">Contact</a></button>
       <button class="button is-dark"><a href="/mapOverview">Map Overview</a></button> 
 
@@ -24,20 +91,22 @@
       <strong id="user-email">{{blahUser.email}}</strong>
       <button class="button is-dark"><a href="/logout" id="logout">Logout</a></button>
       <div class="dropdown">
-        <button class="button is-dark"><a href="/mover">mover Page</a></button>
+        <button class="button is-dark"><a href="/mover">Mover Page</a></button>
           <div class="dropdown-content">
             <a href="/mover/add">Add Item</a>
             <a href="#">Link 2</a>
             <a href="#">Link 3</a>
           </div>
-      </div>         
+      </div>    
+
+        
       {{#if blahUser.isAdmin}}
          <button class="button is-dark"><a href="/admin/users">Admin</a></button>
       {{/if}}
     {{else}}        
       <button class="button is-dark"><a href="/login">Login</a></button>
       <button class="button is-dark"><a href="/signup">Signup</a></button>
-    {{/if}}
+    {{/if}} --}}
     
     </nav>
   </header>
@@ -46,7 +115,7 @@
 
 
     <script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key={{mapKey}}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAX5gtMTa1HIkQxiVBAFF6HmipaJZVujok"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src='/javascripts/script.js'></script>
   </body>

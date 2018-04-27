@@ -3,7 +3,7 @@ const Schema   = mongoose.Schema;
 
 const productSchema = new Schema({
   productType:  { type: String, enum: ["Electronics", "Home appliance", "Home furnishing"]},
-  product:      { type: String, enum:["Television", "Phone", "Washing machine","Refrigerator", "Furniture", "Bed room"]},
+  product:      { type: String, enum:["Television", "Phone", "Washing machine", "Refrigerator", "Table", "Bed", "Other"]},
   brand:        { type: String, required: true},
   model:        { type: String, required: true},  
   description:  { type: String, required: true},
