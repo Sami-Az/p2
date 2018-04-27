@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const Schema   = mongoose.Schema;
 
 const productSchema = new Schema({
@@ -25,8 +26,9 @@ const productSchema = new Schema({
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at'
-  }
+  } 
 });
+
 productSchema.index({ location: "2dsphere" });
 const Product = mongoose.model('Product', productSchema);
 module.exports = Product;

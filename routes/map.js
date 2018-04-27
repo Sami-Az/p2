@@ -9,8 +9,7 @@ mapRoutes.get("/mapOverview", (req, res, next) => {
 });
 
 mapRoutes.get("/moverMap/data", (req, res, next) => {
-    console.log(" get in:/moverMap/data")
-    Product.find()
+  Product.find()
     .then((allMover) => {
       res.json(allMover);
     })
@@ -18,4 +17,5 @@ mapRoutes.get("/moverMap/data", (req, res, next) => {
       next(err);
     });
 });
+
 module.exports = mapRoutes;

@@ -14,32 +14,30 @@ departRoutes.get("/departments", (req, res, next) => {
   res.render("depart/departments-page");
 });
 
-
-// All products route
-departRoutes.get("/allproducts", (req, res, next) => {
-  console.log('yolo')
-  Product.find()
-    
+departRoutes.get("/allproducts", (req, res, next) => {  
+  Product.find()    
     .then((productsFromDb) => {
-       //res.locals.productList = productsFromDb;
-      
-
-        res.render("depart/products",{productList: productsFromDb});
-
-       
+      productsFromDb.map(function(a) {
+          a = a.toObject()        
+          a.isMe = false;     
+          if(req.user !== undefined && req.user._id.toString() === a.userId.toString()){
+              a.isMe = true;
+          }
+          return a; 
+        })   
+       res.render("depart/products", { productList: productsFromDb });
     })
-    .catch((err) => {
-      
+    .catch((err) => {      
       next(err);
     });
-  });
+});
 
   // Electronics route
 departRoutes.get("/allproducts/electronics", (req, res, next) => {
   Product.find({productType: "Electronics"})
    
   .then((productsFromDb) => {
-    console.log(productsFromDb);
+    console.log(":--->:"+productsFromDb);
     res.locals.productList = productsFromDb
     res.render("depart/electronics");
   })
@@ -54,8 +52,8 @@ departRoutes.get("/allproducts/homeappliance", (req, res, next) => {
   Product.find({productType: "Home appliance"})
    
   .then((productsFromDb) => {
-    console.log(productsFromDb);
-    res.locals.productList = productsFromDb.productType
+    console.log("Home furniture:--->:"+productsFromDb);
+    res.locals.productList = productsFromDb
     res.render("depart/home-appliance");
   })
   .catch((err) => {
@@ -68,9 +66,8 @@ departRoutes.get("/allproducts/homefurniture", (req, res, next) => {
   Product.find({productType: "Home furnishing"})
    
   .then((productsFromDb) => {
-    console.log(productsFromDb);
-    res.locals.productList = productsFromDb
-    
+    console.log("Home furniture:--->:"+productsFromDb);
+    res.locals.productList = productsFromDb    
     res.render("depart/home-furniture");
   })
   .catch((err) => {

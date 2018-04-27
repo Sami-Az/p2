@@ -5,9 +5,8 @@
    <br>
 </div>
 
-   
-   <ul>
-    {{#each productList}}
+<ul>
+  {{#each productList}}
 
 <div class="card">
   <div class="card-content">
@@ -27,67 +26,29 @@
       {{this.description}}
       <br>
       <br>
-      <a href="/products/{{this._id}}">
+      <button class="button"><a href="/products/{{this._id}}">
         See more details about this product
-      </a>
+      </a></button>
+    </div>
+    {{#if ../blahUser.isAdmin}}
+      <div>
+         <button class="button"><a href="products/{{this._id}}/edit">Edit</a></button>
+         <button class="button"><a href="products/{{this._id}}/delete">Delete</a></button>
+     </div>
+    {{/if}}
+    {{#if this.isMe}}
+    <div>
+         <button class="button"><a href="products/{{this._id}}/edit">Edit</a> </button>
+         <button class="button"></button><a href="products/{{this._id}}/delete">Delete</a></button>
+     </div>
+    {{/if}}
+     <br/>
     </div>
   </div>
-  {{#if ../blahUser.isAdmin}}
-  
-      <div>
-         <a href="products/{{this._id}}/edit">Edit</a>
-         <a href="products/{{this._id}}/delete">Delete</a>
-     </div>
-
-  {{/if}}
-  <br>
-  <br>
-  {{else}}
-  {{#if ../blahUser.isMover}}
-      <div>
-         <a href="products/{{this._id}}/edit">Edit</a>
-         <a href="products/{{this._id}}/delete">Delete</a>
-     </div>
-     
-  {{/if}} 
-     
+<br>
+<br>
 </div>
 
   {{/each}}
-    <br>
-  <br>
 </ul>
 
-
-  
-
-
-
-
-
-
-
-
-
-{{!-- <div class="columns" id="products">
-     
-     <div class="column is-two-fifths" id="two-fifth"></div>
-     <br>
-     <div class="column is-one-third" id="first-fifth"></div>
-     <br>
-     <div class="column is-one-third" id="sec-fifth"></div>
-     <br>
-</div>
-
-<div class="columns" id="products-button">
-   <div class="column is-two-fifths">
-     
-    <a href="/products/{{product._id}}">See Details</a>
-   </div>
-   <div class="column is-one-third">
-     <a href="/products/{{product._id}}">See Details</a>
-   </div>
-   <div class="column is-one-third">
-      <a href="/products/{{product._id}}">See Details</a>
-   </div>
-</div> --}}

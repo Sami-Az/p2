@@ -20,14 +20,12 @@ const userSchema = new Schema({
 });
 
 userSchema.virtual("isAdmin").get( function () {
-  if( this.role === "admin" || this.role === "mover"){
-    return true;
-  };
+  return this.role === "admin"
 });
-
-// userSchema.virtual("isMover").get( function () {
-//   return this.role === "mover";
-// });
+/*
+userSchema.virtual("isMover").get( function () {
+  return this.role === "mover";
+});*/
 
 const User = mongoose.model('User', userSchema);
 

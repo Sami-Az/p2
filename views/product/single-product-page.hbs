@@ -1,21 +1,6 @@
  <div class="single-product">
      <h2>Single Product Page</h2>
-     <br>
-         {{!-- <h2>{{product.productName}}</h2>
-           <p>Brand: {{product.brand}}</p>
-           <p>Model : {{product.model}}</p>
-           <p>{{product.description}}</p>
-           <p>Status: {{product.status}}</p>
-           <img src="{{product.imageUrl}}" alt="">
-           <p>
-             <a href="/{{product.pdflink}}"> See more details:</a>
-           </p>
-           <br>
-           <p>Added on {{product.created_at}}</p>
-
-         <hr> --}}
-
-
+     <br/>
 <div class="card">
   <div class="card-content single-card">
     <div class="media">
@@ -32,17 +17,16 @@
 
     <div class="content">
       {{product.description}}
-      <br>
-      <br>
-      
+      <br/>
         <p>Added on {{ product.created_at}}</p>
       <br>
     </div>
   </div>
-<br>
-<br>
-</div>
-
+  <button class="button" id="seeMapClik"><a href="/mapOverview">See map</a>
+    <p style="display:none">{{product._id}}</p>
+  </button>
+<br/>
+   
  </div>
 
 
