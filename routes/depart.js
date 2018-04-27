@@ -36,7 +36,7 @@ departRoutes.get("/allproducts", (req, res, next) => {
 
   // Electronics route
 departRoutes.get("/allproducts/electronics", (req, res, next) => {
-  Product.find()
+  Product.find({productType: "Electronics"})
    
   .then((productsFromDb) => {
     console.log(productsFromDb);
@@ -51,7 +51,7 @@ departRoutes.get("/allproducts/electronics", (req, res, next) => {
 
 // Home appliance route
 departRoutes.get("/allproducts/homeappliance", (req, res, next) => {
-  Product.find()
+  Product.find({productType: "Home appliance"})
    
   .then((productsFromDb) => {
     console.log(productsFromDb);
@@ -65,7 +65,7 @@ departRoutes.get("/allproducts/homeappliance", (req, res, next) => {
 
 // Home fourniture route
 departRoutes.get("/allproducts/homefurniture", (req, res, next) => {
-  Product.find()
+  Product.find({productType: "Home furnishing"})
    
   .then((productsFromDb) => {
     console.log(productsFromDb);

@@ -1,1 +1,29 @@
 <h2>Home Appliance page</h2>
+<br>
+{{#each productList}}
+
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="{{this.imageUrl}}" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">{{this.productName}}</p>
+        <p class="subtitle is-6">Brand: {{this.brand}}</p>
+      </div>
+    </div>
+
+    <div class="content">
+      {{this.description}}
+      <br>
+      <br>
+      <a href="/products/{{this._id}}">
+        See more details about this product
+      </a>
+    </div>
+  </div>
+
+{{/each}}
